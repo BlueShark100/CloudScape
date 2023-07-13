@@ -21,5 +21,5 @@ This row is above the second row with the center keys "5" and "6". Active keys: 
 ###### Fourth Row | Spot lights
 This row is at the bottom, below the main row with the center keys "V" "B". Active keys: **zxcv bnm,** . Note the Comma is an included key within the set
 
-#Please Note!
+# Please Note!
 This is unfinished, whenever I get the time I plan to add Moore featured and maybe more lights but I put it out there for those who are interested in playing with what I have so far. 
