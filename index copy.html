@@ -1,0 +1,579 @@
+<DOCTYPE html>
+<html>
+    <body>
+        <img class="Backdrop" id="night" src="Nighttime.png">
+        <img class="Moon" id="moon" src="Moon.png">
+        <div class="Colors">
+            <img class="Color" id="CL4" src="Fill Lights/Fill L4.png">
+            <img class="Color" id="CL3" src="Fill Lights/Fill L3.png">
+            <img class="Color" id="CL2" src="Fill Lights/Fill L2.png">
+            <img class="Color" id="CL1" src="Fill Lights/Fill L1.png">
+
+            <img class="Color" id="CR1" src="Fill Lights/Fill R1.png">
+            <img class="Color" id="CR2" src="Fill Lights/Fill R2.png">
+            <img class="Color" id="CR3" src="Fill Lights/Fill R3.png">
+            <img class="Color" id="CR4" src="Fill Lights/Fill R4.png">
+        </div>
+        <div class="Ring">
+            <img class="Circle" id="RL4" src="Edge Lights/Edge L1.png">
+            <img class="Circle" id="RL3" src="Edge Lights/Edge L2.png">
+            <img class="Circle" id="RL2" src="Edge Lights/Edge L3.png">
+            <img class="Circle" id="RL1" src="Edge Lights/Edge L4.png">
+
+            <img class="Circle" id="RR1" src="Edge Lights/Edge R4.png">
+            <img class="Circle" id="RR2" src="Edge Lights/Edge R3.png">
+            <img class="Circle" id="RR3" src="Edge Lights/Edge R2.png">
+            <img class="Circle" id="RR4" src="Edge Lights/Edge R1.png">
+        </div>
+        <div class="Boxes">
+            <img class="Box" id="BL1" src="Lightning/Light L1.png">
+            <img class="Box" id="BL2" src="Lightning/Light L2.png">
+            <img class="Box" id="BL3" src="Lightning/Light L3.png">
+            <!--
+            <img class="Box" id="BL4" src="Lightning/Light L4.png">
+            -->
+
+            <img class="Box" id="BR1" src="Lightning/Light R1.png">
+            <img class="Box" id="BR2" src="Lightning/Light R2.png">
+            <img class="Box" id="BR3" src="Lightning/Light R3.png">
+            <!--
+            <img class="Box" id="BR4" src="Lightning/Light R4.png">
+            -->
+        </div>
+        <div class="Bars">
+            <img class="Bar" id="AL1" src="Spotlights/Spot L1.png">
+            <img class="Bar" id="AL2" src="Spotlights/Spot L2.png">
+            <img class="Bar" id="AL3" src="Spotlights/Spot L3.png">
+            <img class="Bar" id="AL4" src="Spotlights/Spot L4.png">
+
+            <img class="Bar" id="AR1" src="Spotlights/Spot R1.png">
+            <img class="Bar" id="AR2" src="Spotlights/Spot R2.png">
+            <img class="Bar" id="AR3" src="Spotlights/Spot R3.png">
+            <img class="Bar" id="AR4" src="Spotlights/Spot R4.png">
+        </div>
+    </body>
+    
+    <style>
+        .Moon {
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            opacity: 0%;
+        }
+
+        .Backdrop {
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+        }
+
+        .Circle {
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            opacity: 100%;
+        }
+
+        .Color {
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            opacity: 100%;
+        }
+
+        .Box {
+            width:100%;
+            Height:100%;
+            object-fit: contain;
+            position: absolute;
+            opacity: 0%;
+        }
+
+        .Bar {
+            width:100%;
+            Height:100%;
+            object-fit: contain;
+            position: absolute;
+            opacity: 0%;
+        }
+
+        html {
+            background-color: black;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        @keyframes fadeout {
+            0% {opacity: 100%;}
+            100% {opacity: 0%;}
+        }
+
+        @keyframes striked {
+            0% {opacity: 100%;}
+            10% {opacity: 20%;}
+            11% {opacity: 100%;}
+            100% {opacity: 0%;}
+        }
+
+        @keyframes hueshift {
+            0% {filter: hue-rotate(0deg);}
+            50% {filter: hue-rotate(360deg);}
+            100% {filter: hue-rotate(0deg);}
+        }
+
+    </style>
+
+    <script>
+        var mode = 0;
+        window.onload = function(){ 
+
+            alert('Press all the keys to turn off the lights. Keep in mind your cursor will disapear automatically on the site so to find it again just move it up and out of the page. For more information on how to use go to my GitHub => https://github.com/BlueShark100/Light-Show <= Enjoy!');            
+
+            window.addEventListener("keyup", function(e) {
+                if ((e.keyCode == 188) && (mode == 0)) {
+                    AR4.style="opacity: 0%";
+                } else if ((e.keyCode == 188) && (mode == 1)) {
+                    AR4.style="opacity:0%";
+                    AR4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                }
+            });
+            window.addEventListener("keydown", function(e) {
+                if ((e.keyCode == 188) && (mode == 0)) {
+                    AR4.style="opacity: 100%";
+                } else if ((e.keyCode == 188) && (mode == 1)) {
+                    AR4.style="opacity: 100%";
+                }
+            });
+
+            var g_key = 71;
+            var space_key =32;
+
+            //Light Bars Left and Right side keycodes
+            var five_key = 53; 
+            var four_key = 52;
+            var three_key = 51;
+            var two_key = 50;
+
+            var six_key = 54;
+            var seven_key = 55;
+            var eight_key = 56;
+            var nine_key = 57;
+
+            //Circle lights keycodes
+            var r_key = 82;
+            var e_key = 69;
+            var w_key = 87;
+            var q_key = 81;
+
+            var y_key = 89;
+            var u_key = 85;
+            var i_key = 73;
+            var o_key = 79;
+
+            //Colored lights keycodes
+            var f_key = 70;
+            var d_key = 68;
+            var s_key = 83;
+            var a_key = 65;
+
+            var h_key = 72;
+            var j_key = 74;
+            var k_key = 75;
+            var l_key = 76;
+
+            //Bar light keycodes
+            var comma_key = 190;
+            var m_key = 77;
+            var n_key = 78;
+            var b_key = 66;
+
+            var v_key = 86;
+            var c_key = 67;
+            var x_key = 88;
+            var z_key = 90;
+            
+            window.onkeydown = function(gfg){ 
+
+                //effect keys
+                if((gfg.keyCode === g_key) && (mode == 0)){                // 1 if 0 
+                    mode = 1;
+                } else if ((gfg.keyCode === g_key) && (mode == 1)) {                    // 0 if 1 again
+                    mode = 0;
+                }; 
+
+                if (mode == 0 || mode == 1) {
+                    //bars
+                    if(gfg.keyCode === five_key){ 
+                        BL1.style="opacity: 100%"; 
+                    }; 
+                    if(gfg.keyCode === four_key){
+                        BL2.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === three_key){
+                        BL3.style="opacity:100%";
+                    };
+                    /*
+                    if(gfg.keyCode === two_key){
+                        BL4.style="opacity:100%";
+                    };
+                    */
+                    if(gfg.keyCode === six_key){ 
+                        BR1.style="opacity: 100%"; 
+                    }; 
+                    if(gfg.keyCode === seven_key){
+                        BR2.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === eight_key){
+                        BR3.style="opacity:100%";
+                    };
+                    /*
+                    if(gfg.keyCode === nine_key){
+                        BR4.style="opacity:100%";
+                    };
+                    */
+                    if(gfg.keyCode === space_key){ 
+                        moon.style="opacity: 100%"; 
+                    }; 
+                    //Circle lights
+                    if(gfg.keyCode === r_key){ 
+                        RL4.style="opacity: 100%"; 
+                    }; 
+                    if(gfg.keyCode === e_key){
+                        RL3.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === w_key){
+                        RL2.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === q_key){
+                        RL1.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === y_key){ 
+                        RR4.style="opacity: 100%"; 
+                    }; 
+                    if(gfg.keyCode === u_key){
+                        RR3.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === i_key){
+                        RR2.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === o_key){
+                        RR1.style="opacity:100%";
+                    };
+
+                    //Colored Lights
+                    if(gfg.keyCode === f_key){ 
+                        CL1.style="opacity: 100%"; 
+                    }; 
+                    if(gfg.keyCode === d_key){
+                        CL2.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === s_key){
+                        CL3.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === a_key){
+                        CL4.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === h_key){ 
+                        CR1.style="opacity: 100%"; 
+                    }; 
+                    if(gfg.keyCode === j_key){
+                        CR2.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === k_key){
+                        CR3.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === l_key){
+                        CR4.style="opacity:100%";
+                    };
+
+                    //Bar lights
+                    if(gfg.keyCode === m_key){
+                        AR3.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === n_key){
+                        AR2.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === b_key){
+                        AR1.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === z_key){
+                        AL4.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === x_key){
+                        AL3.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === c_key){
+                        AL2.style="opacity:100%";
+                    };
+                    if(gfg.keyCode === v_key){
+                        AL1.style="opacity:100%";
+                    };
+                };
+            }; 
+            window.onkeyup = function(gfg){ //       ======== ON KEY UP ========      for isntant lighting
+
+                if (mode == 0) {
+                    //bars
+                    if(gfg.keyCode === five_key){ 
+                        BL1.style="opacity:0%";
+                        BL1.style.animation = "striked 0.6s linear 0s 1 normal";
+                    }; 
+                    if(gfg.keyCode === four_key){
+                        BL2.style="opacity:0%";
+                        BL2.style.animation = "striked 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === three_key){
+                        BL3.style="opacity:0%";
+                        BL3.style.animation = "striked 0.6s linear 0s 1 normal";
+                    };
+                    /*
+                    if(gfg.keyCode === two_key){
+                        BL4.style="opacity:0%";
+                        BL4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    */
+                    if(gfg.keyCode === six_key){ 
+                        BR1.style="opacity:0%";
+                        BR1.style.animation = "striked 0.6s linear 0s 1 normal";
+                    }; 
+                    if(gfg.keyCode === seven_key){
+                        BR2.style="opacity:0%";
+                        BR2.style.animation = "striked 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === eight_key){
+                        BR3.style="opacity:0%";
+                        BR3.style.animation = "striked 0.6s linear 0s 1 normal";
+                    };
+                    /*
+                    if(gfg.keyCode === nine_key){
+                        BR4.style="opacity:0%";
+                        BR4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    */
+                    if(gfg.keyCode === space_key){ 
+                        moon.style="opacity: 0%"; 
+                    }; 
+                    //Circle lights
+                    if(gfg.keyCode === r_key){ 
+                        RL4.style="opacity: 0%"; 
+                    }; 
+                    if(gfg.keyCode === e_key){
+                        RL3.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === w_key){
+                        RL2.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === q_key){
+                        RL1.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === y_key){ 
+                        RR4.style="opacity: 0%"; 
+                    }; 
+                    if(gfg.keyCode === u_key){
+                        RR3.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === i_key){
+                        RR2.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === o_key){
+                        RR1.style="opacity:0%";
+                    };
+
+                    //Colored Lights
+                    if(gfg.keyCode === f_key){ 
+                        CL1.style="opacity:0%"; 
+                    }; 
+                    if(gfg.keyCode === d_key){
+                        CL2.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === s_key){
+                        CL3.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === a_key){
+                        CL4.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === h_key){ 
+                        CR1.style="opacity:0%"; 
+                    }; 
+                    if(gfg.keyCode === j_key){
+                        CR2.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === k_key){
+                        CR3.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === l_key){
+                        CR4.style="opacity:0%";
+                    };
+
+                    //bar lights
+                    if(gfg.keyCode === m_key){
+                        AR3.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === n_key){
+                        AR2.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === b_key){
+                        AR1.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === z_key){
+                        AL4.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === x_key){
+                        AL3.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === c_key){
+                        AL2.style="opacity:0%";
+                    };
+                    if(gfg.keyCode === v_key){
+                        AL1.style="opacity:0%";
+                    };
+                } else if (mode == 1){
+                    //bars
+                    if(gfg.keyCode === five_key){ 
+                        BL1.style="opacity:0%";
+                        BL1.style.animation = "striked 0.6s linear 0s 1 normal";
+                    }; 
+                    if(gfg.keyCode === four_key){
+                        BL2.style="opacity:0%";
+                        BL2.style.animation = "striked 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === three_key){
+                        BL3.style="opacity:0%";
+                        BL3.style.animation = "striked 0.6s linear 0s 1 normal";
+                    };
+                    /*
+                    if(gfg.keyCode === two_key){
+                        BL4.style="opacity:0%";
+                        BL4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    */
+                    if(gfg.keyCode === six_key){ 
+                        BR1.style="opacity:0%";
+                        BR1.style.animation = "striked 0.6s linear 0s 1 normal";
+                    }; 
+                    if(gfg.keyCode === seven_key){
+                        BR2.style="opacity:0%";
+                        BR2.style.animation = "striked 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === eight_key){
+                        BR3.style="opacity:0%";
+                        BR3.style.animation = "striked 0.6s linear 0s 1 normal";
+                    };
+                    /*
+                    if(gfg.keyCode === nine_key){
+                        BR4.style="opacity:0%";
+                        BR4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    */
+                    if(gfg.keyCode === space_key){ 
+                        moon.style="opacity: 0%"; 
+                        moon.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    }; 
+                    //Circle lights
+                    if(gfg.keyCode === r_key){ 
+                        RL4.style="opacity:0%";
+                        RL4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    }; 
+                    if(gfg.keyCode === e_key){
+                        RL3.style="opacity:0%";
+                        RL3.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === w_key){
+                        RL2.style="opacity:0%";
+                        RL2.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === q_key){
+                        RL1.style="opacity:0%";
+                        RL1.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === y_key){ 
+                        RR4.style="opacity:0%";
+                        RR4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    }; 
+                    if(gfg.keyCode === u_key){
+                        RR3.style="opacity:0%";
+                        RR3.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === i_key){
+                        RR2.style="opacity:0%";
+                        RR2.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === o_key){
+                        RR1.style="opacity:0%";
+                        RR1.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+
+                    //Colored Lights
+                    if(gfg.keyCode === f_key){ 
+                        CL1.style="opacity:0%";
+                        CL1.style.animation = "fadeout 0.6s linear 0s 1 normal"; 
+                    }; 
+                    if(gfg.keyCode === d_key){
+                        CL2.style="opacity:0%";
+                        CL2.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === s_key){
+                        CL3.style="opacity:0%";
+                        CL3.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === a_key){
+                        CL4.style="opacity:0%";
+                        CL4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === h_key){ 
+                        CR1.style="opacity:0%";
+                        CR1.style.animation = "fadeout 0.6s linear 0s 1 normal"; 
+                    }; 
+                    if(gfg.keyCode === j_key){
+                        CR2.style="opacity:0%";
+                        CR2.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === k_key){
+                        CR3.style="opacity:0%";
+                        CR3.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === l_key){
+                        CR4.style="opacity:0%";
+                        CR4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+
+                    //Bar lights
+                    
+                    if(gfg.keyCode === m_key){
+                        AR3.style="opacity:0%";
+                        AR3.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === n_key){
+                        AR2.style="opacity:0%";
+                        AR2.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === b_key){
+                        AR1.style="opacity:0%";
+                        AR1.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === z_key){
+                        AL4.style="opacity:0%";
+                        AL4.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === x_key){
+                        AL3.style="opacity:0%";
+                        AL3.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === c_key){
+                        AL2.style="opacity:0%";
+                        AL2.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    if(gfg.keyCode === v_key){
+                        AL1.style="opacity:0%";
+                        AL1.style.animation = "fadeout 0.6s linear 0s 1 normal";
+                    };
+                    
+                };
+            };
+        };	
+    </script>
+</html>

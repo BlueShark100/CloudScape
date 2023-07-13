@@ -1,0 +1,39 @@
+<DOCTYPE html>
+<html>
+    <body>
+
+        <div class="Colors">
+            <img class="Color" id="CL4" src="Fill Lights/Fill L4.png">
+            <img class="Color" id="CL3" src="Fill Lights/Fill L3.png">
+            <img class="Color" id="CL2" src="Fill Lights/Fill L2.png">
+            <img class="Color" id="CL1" src="Fill Lights/Fill L1.png">
+
+            <img class="Color" id="CR1" src="Fill Lights/Fill R1.png">
+            <img class="Color" id="CR2" src="Fill Lights/Fill R2.png">
+            <img class="Color" id="CR3" src="Fill Lights/Fill R3.png">
+            <img class="Color" id="CR4" src="Fill Lights/Fill R4.png">
+        </div>
+    </body>
+
+    <style>
+        html {
+            background-color: black;
+        }
+
+        .Color {
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            filter: saturate(100%);
+            animation: hueshift 15s linear 0s infinite;
+        }
+
+        @keyframes hueshift {
+            0% {filter: hue-rotate(0deg);}
+            50% {filter: hue-rotate(360deg);}
+            100% {filter: hue-rotate(0deg);}
+        }
+
+    </style>
+</html>
