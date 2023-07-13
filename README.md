@@ -6,8 +6,11 @@ Improvised light show using your keybaord as input. This is a predecessor to the
 This is because the html file references the images locally within the folder. Then you can simply open the index.html file using your browser to run the code.
 
 ## How to Use
-Each set of lights corresponds to a row on your keyboard. There are 4 sets of lights for 4 rows on your keybaord. Each row will have 4 keys on the left side and right side of the specified center key/s.
+Each set of lights corresponds to a row on your keyboard. There are 4 sets of lights for 4 rows on your keybaord. Each row will have 4 keys on the left side and right side of the specified center.
 The "G" key can be used to switch between a instant and fade-out mode. Pressing the key will toggle the current lighting effect.
+
+###### Center piece | Moon
+Just use the Space bar for this one.
 
 ###### Main Row | Filled Hexes
 The center of this row is the "G" key (not used as a light). The active keys include **asdf_hjkl**. Note the underscore to specify the center with a signle key center
